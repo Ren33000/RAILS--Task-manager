@@ -1,7 +1,14 @@
-<h1>My tasks</h1>
-<ul>
-  <% @tasks.each do |task| %>
-    <li><%= task.title %></li>
-  <% end %>
-</ul>
-
+<div class="container">
+  <h1 class="my-5">My tasks 😩</h1>
+  <div class="row">
+    <% @tasks.each do |task| %>
+      <div class="col-6 col-lg-4">
+        <%= link_to task_path(task) do %>
+          <div class="shadow rounded p-3 mb-3">
+            <h3 class="mb-3"><%= task.title %></h3>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
