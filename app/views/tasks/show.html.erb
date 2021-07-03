@@ -1,6 +1,9 @@
-<h1><%= @task.title %></h1>
-<p><%= @task.details %></h1></p>
+<div class="container">
+    <%= link_to "Edit this task", edit_task_path, class: "btn btn-success" %>
+    <h1><%= @task.title %></h1>
+    <p><%= @task.details %></h1></p>
 
-<p>This task is completed</p>
+    <p>This task is completed</p>
 
- <%= link_to "Back to list", tasks_path, class: "btn btn-primary" %>
+    <%= link_to "Back to list", tasks_path, class: "btn btn-primary" %>
+</div>
