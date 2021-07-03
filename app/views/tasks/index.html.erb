@@ -6,6 +6,7 @@
         <%= link_to task_path(task) do %>
           <div class="shadow rounded p-3 mb-3">
             <h3 class="mb-3"><%= task.title %></h3>
+            <p><%= link_to "🚮", task_path(task), method: "delete", data: {confirm: "Are you sure?"}%></p>
           </div>
         <% end %>
       </div>
