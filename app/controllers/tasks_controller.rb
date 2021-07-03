@@ -9,18 +9,21 @@ class TasksController < ApplicationController
     end
 
     def new
-		@tasks = Task.new
-		#form to send = authenticity token (need to add hidden fiel tag in the form.html)
+		@task = Task.new
     end
 
 	def create
-		@restaurants = Restaurant.new(params[:restaurant])
-		@restaurant.save
-		redirect_to restaurant_path(@restaurant) #using the strong params
-	 #don't need to recreate and update the form, use form_for in the html
+		@task = Task.new(task_params)
+        @task.save
+        redirect_to tasks_path(@task)
 	end
 
+
     private
+    def task_params
+        params.require(:task).permit(:title, :details, :completed)
+    end
+
     def find_task
        @task = Task.find(params[:id])
     end
